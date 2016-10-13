@@ -1,0 +1,270 @@
+<!-- Latvia -->
+<bTypes>
+	<bType label="Pseudo" serialID="0" class="org.volante.abm.agent.bt.PseudoBT">
+	</bType>
+	
+	<bType label="NonAdopter_LV_Cluster1" serialID="1" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_NA_LV_Cluster1.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.137</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.416</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.447</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="NonAdopter_LV_Cluster2" serialID="2" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_NA_LV_Cluster2.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.137</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.416</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.447</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="NonAdopter_LV_Cluster3" serialID="3" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_NA_LV_Cluster3.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.137</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.416</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.447</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="NonAdopter_LV_Cluster4" serialID="4" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_NA_LV_Cluster4.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.137</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.416</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.447</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="NonAdopter_LV_Cluster5" serialID="5" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_NA_LV_Cluster5.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.137</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.416</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.447</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	
+	<bType label="Adopter_LV_Cluster1" serialID="6" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_A_LV_Cluster1.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.357</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.223</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.420</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="Adopter_LV_Cluster2" serialID="7" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_A_LV_Cluster2.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.357</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.223</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.420</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="Adopter_LV_Cluster3" serialID="8" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_A_LV_Cluster3.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.357</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.223</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.420</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="Adopter_LV_Cluster4" serialID="9" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_A_LV_Cluster4.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.357</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.223</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.420</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="Adopter_LV_Cluster5" serialID="10" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_A_LV_Cluster5.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.357</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.223</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.420</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+	
+	<bType label="Adopter_LV_Cluster6" serialID="11" class="org.volante.abm.agent.bt.CognitiveBT">
+		<triggers>
+			<trigger class="org.volante.abm.decision.trigger.PositiveDT" id="OfAdoptionDT">
+				<dcId>OfAdoption</dcId>
+				<startTick>2001</startTick>
+			</trigger>
+		</triggers>
+		<laraAgentConfigurator class="org.volante.abm.lara.CobraLaraXmlAgentConfigurator">
+			<bofile>./pas/Pas_A_LV_Cluster6.xml</bofile>
+			
+			<preferenceWeight pref="WAttitude">0.357</preferenceWeight>
+			<preferenceWeight pref="WSubjectiveNorm">0.223</preferenceWeight>
+			<preferenceWeight pref="WPBC">0.420</preferenceWeight>
+			
+			<preprocessorConfigurator>
+				<collectorEntry>
+					<dConfig>OfAdoption</dConfig>
+					<collector class="org.volante.abm.comi.lara.ComiPaCollector">
+					</collector>
+				</collectorEntry>				
+			</preprocessorConfigurator>
+		</laraAgentConfigurator>
+	</bType>
+</bTypes>

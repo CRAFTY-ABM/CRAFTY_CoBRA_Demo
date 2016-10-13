@@ -1,0 +1,49 @@
+<LBoFactoryList>
+	<bofactory class="org.volante.abm.comi.decision.pa.ComiOfAdoptionPa$ComiOfAdoptionPaFactory">
+		 <key>Conv_AdoptOF_#Name_LV</key>	 
+		 <attitude class="com.moseph.modelutils.distribution.NormalDistribution" 
+		 	mean="#Attitude_mean" sd="#Attitude_sd"	/>
+		 <uncertainty_a class="com.moseph.modelutils.distribution.NormalDistribution" 
+		 	mean="#AttitudeU_mean" sd="#AttitudeU_sd"/>
+		 <subjectiveNorm class="com.moseph.modelutils.distribution.NormalDistribution" 
+		 	mean="#SubjectiveNorm_mean" sd="#SubjectiveNorm_sd"/>
+		 <uncertainty_sn class="com.moseph.modelutils.distribution.NormalDistribution" 
+		 	mean="#SubjectiveNormU_mean" sd="#SubjectiveNormU_sd"/>
+		 <behaviouralControl class="com.moseph.modelutils.distribution.NormalDistribution" 
+		 	mean="#PBC_mean" sd="#PBC_sd"/>
+		 	
+		 <preferenceUtilities>
+			 <utility pref="WAttitude">1.0</utility>
+			 <utility pref="WSubjectiveNorm">1.0</utility>
+			 <utility pref="WPBC">1.0</utility>
+		 </preferenceUtilities>
+		 <agentclassname>org.volante.abm.agent.bt.LaraBehaviouralComponent</agentclassname>
+	</bofactory>
+	
+	<bofactory class="org.volante.abm.decision.pa.DoNothingPa$DoNothingPaFactory">
+		 <key>Conc_DoNothing_LV</key>
+		 <threshold>#Threshold</threshold>
+		 <preferenceUtilities>
+			 <utility pref="THRESHOLD">1.0</utility>
+		 </preferenceUtilities>
+		 <agentclassname>org.volante.abm.agent.bt.LaraBehaviouralComponent</agentclassname>
+	</bofactory>
+		<bofactory class="org.volante.abm.comi.decision.pa.ComiSwitchBackPa$ComiSwitchBackPaFactory">
+		 <key>OF_SwitchConc_#Name_LV</key>	 
+		 <preferenceUtilities>
+			 <utility pref="WAttitude">1.0</utility>
+			 <utility pref="WSubjectiveNorm">1.0</utility>
+			 <utility pref="WPBC">1.0</utility>
+		 </preferenceUtilities>
+		 <agentclassname>org.volante.abm.agent.bt.LaraBehaviouralComponent</agentclassname>
+	</bofactory>
+	
+	<bofactory class="org.volante.abm.decision.pa.DoNothingPa$DoNothingPaFactory">
+		 <key>OF_DoNothing_LV</key>
+		 <threshold>-#Threshold</threshold>
+		 <preferenceUtilities>
+			 <utility pref="THRESHOLD">-1.0</utility>
+		 </preferenceUtilities>
+		 <agentclassname>org.volante.abm.agent.bt.LaraBehaviouralComponent</agentclassname>
+	</bofactory>
+</LBoFactoryList>

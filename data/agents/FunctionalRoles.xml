@@ -1,0 +1,214 @@
+<functionalRoles>
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="CConv_Cereal" serialID="0"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpProb)}">
+		
+		<alternativeFr>COF_Cereal</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCConv_Cereal" serialID="1"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpProb)}">
+		
+		<alternativeFr>NCOF_Cereal</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="CConv_Livestock" serialID="2"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpProb)}">
+		
+		<alternativeFr>COF_Livestock</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCConv_Livestock" serialID="3"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpProb)}">
+		
+		<alternativeFr>NCOF_Livestock</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.agent.fr.VariantProductionFR" label="Forester" serialID="4"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpProb)}">
+		
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="COF_Cereal" serialID="5"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpProb)}">
+		
+		<alternativeFr>CConv_Cereal</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, productionCsvFile)}" />
+	</fRole>
+
+
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCOF_Cereal" serialID="6"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpProb)}">
+		
+		<alternativeFr>NCConv_Cereal</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="COF_Livestock" serialID="7"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpProb)}">
+		
+		<alternativeFr>CConv_Livestock</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, productionCsvFile)}" />
+	</fRole>
+	
+	
+	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCOF_Livestock" serialID="8"
+		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpDistributionMean)}"
+		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingInDistributionMean)}"
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpProb)}">
+		
+		<alternativeFr>NCConv_Livestock</alternativeFr>
+
+ 		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpDistributionSD)}"/>
+ 		
+ 		<givingInDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
+ 			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingInDistributionMean)}" 
+ 			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingInDistributionSD)}"/>
+ 		
+ 		<serviceLevelNoise class="com.moseph.modelutils.distribution.UniformDistribution" 
+ 			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, serviceLevelNoiseMin)}" 
+ 			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, serviceLevelNoiseMax)}"/>
+ 		
+		<production class="org.volante.abm.example.SimpleProductionModel"
+			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, productionCsvFile)}" />
+	</fRole>
+</functionalRoles>
