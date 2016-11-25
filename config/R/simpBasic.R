@@ -26,6 +26,7 @@ simp$sim$regions			<- c("EE", "LV")
 simp$sim$runids				<- c("0-0")
 simp$sim$filepartorder_demands <- c("scenario", "U", "datatype", "U", "regions")
 simp$sim$hasregiondir		<- TRUE
+simp$csv$tickinterval_cell	<- 4
 
 ### Directories ################################################################
 simp$dirs$output$data		<- paste(simp$dirs$outputdir, "Data/", sep="")
@@ -47,18 +48,22 @@ simp$mdata$services			<- c("Meat", "Cereal" ,"Conservation", "Timber", "OF_Meat"
 
 simp$mdata$aftNames			<- c("-1" = "Unmanaged", "0" = 'COF_Cereal', "1" = 'NCOF_Cereal', 
 								  "2" = 'COF_Livestock', "3" = 'NCOF_Livestock',
-								  "4" = 'CConf_Cereal', "5" = 'NCConf_Cereal', "6" = 'CConf_Livestock', 
-								  "7" = 'NCConf_Livestock', "8" = 'Forester')
+								  "4" = 'CConv_Cereal', "5" = 'NCConv_Cereal', "6" = 'CConv_Livestock', 
+								  "7" = 'NCConv_Livestock', "8" = 'Forester')
 
 simp$dirs$param$getparamdir <- function(simp, datatype = NULL) {
 	return <- paste(simp$dirs$data,
 			if (is.null(datatype)) { 
 						simp$sim$folder
+					} else if (datatype %in% c("capitaldyns")) {
+						paste("worlds", simp$sim$worldname,
+								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
+											simp$sim$regionalisation, sep="/"), simp$sim$scenario, sep="/")
 					} else if (datatype %in% c("capitals")) {
 						paste("worlds", simp$sim$worldname,
 								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
 											simp$sim$regionalisation, sep="/"), "capitals", sep="/")
-					} else if (datatype %in% c("demand")) {
+					} else if (datatype %in% c("demands")) {
 						paste(simp$sim$folder, "worlds", simp$sim$worldname,
 								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
 											simp$sim$regionalisation, simp$sim$scenario, sep="/"), sep="/")
@@ -96,3 +101,16 @@ simp$colours$AFT <- c(
 		"6" = 'indianred4', 
 		"7" = 'indianred1',
 		"8" = 'green4')
+
+simp$colours$Service <- c(	"-1" = "black",
+		"Meat" 			= "indianred1",
+		"Cereal" 	 	= "orange1",
+		"Conservation" 	= "royalblue2",
+		"Recreation" 	= "royalblue2",
+		"Timber" 		= "green4",
+		"OF_Meat" 		= "darkorchid1",
+		"OF_Cereal" 	= "deepskyblue")
+
+
+simp$fills$AFT 	<- simp$colours$AFT
+simp$fills$Service <- simp$colours$Service

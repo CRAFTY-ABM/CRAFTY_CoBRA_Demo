@@ -10,14 +10,15 @@
 
 if (!exists("simp")) simp <- craftyr::param_getDefaultSimp()
 
-simp$sim$version				<- "calib"
+simp$sim$version				<- "setA"
 simp$sim$parentf				<- NULL
+simp$sim$folder					<- "setA"
 simp$sim$scenario				<- "B1"
 simp$sim$regionalisation		<- "2"
-simp$sim$regions				<- c("EE", "LV")
+simp$sim$regions				<- c("EE")
 simp$sim$runids					<- c("0-0")
 simp$sim$id 					<- "B1-0"
-
+simp$csv$tickinterval_cell		<- 4
 
 ### Directories ################################################################
 simp = shbasic::shbasic_adjust_outputfolders(simp, pattern = "%VFOLDER%", value = 
@@ -53,11 +54,11 @@ simp$batchcreation$gi_stages				<- c("medium")
 simp$batchcreation$placeholders				<- c(0)
 
 simp$batchcreation$inputdatadirs$aftparams	<- paste(simp$batchcreation$inputdatadir, "/agents", sep="")
-simp$batchcreation$inputdatadir$production	<- paste(simp$batchcreation$inputdatadir, "/production", sep="")
-simp$batchcreation$inputdatadir$competition	<- paste(simp$batchcreation$inputdatadir, "/competition", sep="")
-simp$batchcreation$inputdatadir$allocation	<- paste(simp$batchcreation$inputdatadir, "/allocation", sep="")
-simp$batchcreation$inputdatadir$worldfile	<- paste(simp$batchcreation$inputdatadir, "/world", sep="")
-simp$batchcreation$inputdatadir$agentdef 	<- paste(simp$batchcreation$inputdatadir, "/agents", sep="")
+simp$batchcreation$inputdatadirs$production	<- paste(simp$batchcreation$inputdatadir, "/production", sep="")
+simp$batchcreation$inputdatadirs$competition	<- paste(simp$batchcreation$inputdatadir, "/competition", sep="")
+simp$batchcreation$inputdatadirs$allocation	<- paste(simp$batchcreation$inputdatadir, "/allocation", sep="")
+simp$batchcreation$inputdatadirs$worldfile	<- paste(simp$batchcreation$inputdatadir, "/world", sep="")
+simp$batchcreation$inputdatadirs$agentdef 	<- paste(simp$batchcreation$inputdatadir, "/agents", sep="")
 
 
 simp$dirs$param$getparamdir <- function(simp, datatype = NULL) {
@@ -68,7 +69,11 @@ simp$dirs$param$getparamdir <- function(simp, datatype = NULL) {
 						paste("worlds", simp$sim$worldname,
 								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
 											simp$sim$regionalisation, sep="/"), "capitals", sep="/")
-					} else if (datatype %in% c("demand")) {
+					} else if (datatype %in% c("capitaldyns")) {
+						paste("worlds", simp$sim$worldname,
+								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
+											simp$sim$regionalisation, sep="/"), simp$sim$scenario, sep="/")
+					} else if (datatype %in% c("demands")) {
 						paste("worlds", simp$sim$worldname,
 								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
 											simp$sim$regionalisation, simp$sim$scenario, sep="/"), sep="/")
@@ -79,7 +84,7 @@ simp$dirs$param$getparamdir <- function(simp, datatype = NULL) {
 					} else if (datatype %in% c("competition")) {
 						paste("competition", sep="/")
 					} else if (datatype %in% c("runs")) {
-						""
+						simp$sim$folder
 					},
 			sep="/")
 }

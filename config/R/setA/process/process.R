@@ -223,9 +223,9 @@ for (run in runs) {
 		###########################################################################
 		### Calculate Metrics
 		###########################################################################
-		simp$sim$regions	<- "Unknown"
-
-		metrics <- rbind(
+#		simp$sim$regions	<- "Unknown"
+#
+#		metrics <- rbind(
 #				# require raster output:
 #				metric_rasters_changedcells(simp, aft = NULL, dataname = "raster_landUseIndex"),
 #				metric_rasters_changes(simp, dataname = "raster_landUseIndex"),
@@ -235,8 +235,8 @@ for (run in runs) {
 #						directions = 8, relevantafts = c("C_Cereal", "C_Livestock")),
 #				metrics_rasters_connectivity(simp, afts = c("NC_Cereal", "NC_Livestock"),
 #						dataname = "raster_landUseIndex"),
-				
-				metric_aggaft_diversity_shannon(simp, dataname = "dataAggregateAFTComposition"))
+#				
+#				metric_aggaft_diversity_shannon(simp, dataname = "dataAggregateAFTComposition"))
 				
 		simp$sim$regions	<- c("EE", "LV")
 		convert_aggregate_supply(simp, celldataname = "dataAgg")

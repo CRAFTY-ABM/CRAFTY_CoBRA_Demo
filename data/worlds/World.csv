@@ -1,3 +1,0 @@
-pid,ID,Competition,Allocation,Demand,Behavioural Types,Functional Roles,Cell Initialisers,Social Network,Agent Initialisers,LARA Model,Initialisers
-0,EE,xml/Competition.xml,xml/GuGiAllocation.xml,xml/RegionalDemand.xml,agents/BehaviouralTypes_EE.xml,agents/FunctionalRoles.xml,xml/CSVCells.xml,"worlds/NEEU/regionalisations/2/socialnetwork/SocialNetwork_@(Runs.csv, SocialNetwork)_EE.xml",Agents not implemented,lara/RegionalLaraModel.xml,xml/Initialiser.xml
-1,LV,xml/Competition.xml,xml/GuGiAllocation.xml,xml/RegionalDemand.xml,agents/BehaviouralTypes_LV.xml,agents/FunctionalRoles.xml,xml/CSVCells.xml,"worlds/NEEU/regionalisations/2/socialnetwork/SocialNetwork_@(Runs.csv, SocialNetwork)_LV.xml",Agents not implemented,lara/RegionalLaraModel.xml,xml/Initialiser.xml

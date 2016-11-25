@@ -4,6 +4,7 @@
 		<preference>WAttitude</preference>
 		<preference>WSubjectiveNorm</preference>
 		<preference>WPBC</preference>
+		<preference>THRESHOLD</preference>
 		<singleSelectedBoExpected>true</singleSelectedBoExpected>
 	</dConfig>
 </decisonConfigurations>

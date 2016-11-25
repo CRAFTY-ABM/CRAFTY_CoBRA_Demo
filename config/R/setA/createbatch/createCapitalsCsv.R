@@ -27,6 +27,30 @@ capitalfiledataNew <- input_tools_getModelInputFilenames(simp, extension="csv",
 agentProbs <- list("EE" = data.frame("Conv" = 901, "OF"=116),
 		"LV" = data.frame("Conv" = 3692, "OF"=114))
 
+# based on OF land use area:
+agentProbs <- list()
+regions <- simp$sim$regions
+for (region in regions) {
+	simp$sim$regions <- region
+	simp$sim$filepartorder 		<- c("scenario", "U", "datatype")
+	outfiledata <- input_tools_getModelInputFilenames(simp, extension="csv", 
+			datatype="demands")[[1]]
+	outfiledata$Filename <- gsub("demands", "landuses", outfiledata$Filename)
+	luarea <- read.csv(file=outfiledata[1, "Filename"], check.names = F)
+	
+	
+	
+	# get total area (#cells):
+	simp$sim$filepartorder 		<- c("regions", "U", "datatype")
+	outfiledata <- input_tools_getModelInputFilenames(simp, extension="csv", 
+			datatype="capitals")[[1]]
+	outfiledata$Filename <- gsub("Capitals", "CapitalsOrg", outfiledata$Filename)
+	capitals <- read.csv(file=outfiledata[1, "Filename"], check.names = F)
+	numCereal <- nrow(capitals[grepl("Cereal", as.character(capitals$FR)),])
+	numLivestock <- nrow(capitals[grepl("Livestock", as.character(capitals$FR)),])
+	
+}
+
 bcClusterNums = list("EE" = data.frame("Conv" = 5, "OF"=6),
 		"LV" = data.frame("Conv" = 5, "OF"=6))
 
@@ -35,7 +59,7 @@ for(region in simp$sim$regions) {
 
 	of <- prob::probspace(colnames(agentProbs[[region]]),t(agentProbs[[region]][1,]))
 	
-	prob::sim(of, ntrials=1)
+	#prob::sim(of, ntrials=1)
 	
 	capdata <- read.csv(capitalfiledata[capitalfiledata$Region == region, "Filename"],stringsAsFactors =FALSE)
 	

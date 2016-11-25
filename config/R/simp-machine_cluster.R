@@ -4,18 +4,21 @@
 # NOTE: Changes in super-level parameters that are used to derive further
 # parameters need to trigger a re-evaluation of the derived parameters!
 #
-# Project:		TEMPLATE
-# Last update: 	02/09/2015
+# Project:		NetSens (IMPRESSIONS)
+# Last update: 	29/10/2015
 # Author: 		Sascha Holzhauer
 ################################################################################
 
 ### Clean/Remove existing definitions ##########################################
-rm(list=ls(pattern="[^{preserve}]", envir=globalenv()), envir=globalenv())
-
+rm(list=ls(name=globalenv(), pattern="[^{preserve}]"), envir=globalenv())
 
 ### Project Root ###############################################################
-project			<- "PATH-TO-PROJECT"
+project			<- "/exports/csce/eddie/geos/groups/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/"
 
+if (!exists("preserve")) {
+	preserve <- list()
+	preserve$run = 0
+}
 #### Load default SIMP #########################################################
 source(paste(project, "/config/R/simpBasic.R", sep=""))
 simp$dirs$project <- project
@@ -28,17 +31,18 @@ simp$simpDefinition <- paste(simp$dirs$project, "config/R/simp-machine_cluster.R
 simp$dirs$data 				<- paste(simp$dirs$project, "data/", sep="")
 simp$dirs$simp				<- paste(simp$dirs$project, "./config/R/", sep="")
 
-simp$dirs$outputdir			<- paste(simp$dirs$project, "/output/", sep="")
+simp$dirs$outputdir			<- paste("/exports/csce/datastore/geos/groups/LURG/Projects/Impressions/Modelling/CRAFTY_CoBRA_Demo/Output/%VFOLDER%/", sep="/")
 
-simp$dirs$output$simulation	<- paste(simp$dirs$outputdir, "Data/", sep="")
-simp$dirs$output$data		<- paste(simp$dirs$outputdir, "Data/", sep="")
+simp$dirs$output$simulation	<- paste(simp$dirs$project, "/output/%VFOLDER%/", sep="")
+simp$dirs$output$data		<- paste(simp$dirs$project, "data/", sep="")
 simp$dirs$output$rdata		<- paste(simp$dirs$outputdir, "RData/", sep="") 
 simp$dirs$output$raster		<- paste(simp$dirs$outputdir, "Raster/", sep="") 
 simp$dirs$output$figures	<- paste(simp$dirs$outputdir, "Figures/", sep="")
 simp$dirs$output$reports	<- paste(simp$dirs$outputdir, "Reports/", sep="")
 simp$dirs$output$tables		<- paste(simp$dirs$outputdir, "/Tables/", sep="")
 simp$dirs$output$csv		<- paste(simp$dirs$outputdir, "/CSV/", sep="")
+simp$dirs$output$runinfo	<- paste(simp$dirs$project, "CRAFTY_CoBRA-Illustration_Runs.ods", sep="/")
 
 futile.logger::flog.info("Current working directory: %s",
 			getwd(),
-			name = "TEMPLATE.simp")
+			name = "demo.simp")

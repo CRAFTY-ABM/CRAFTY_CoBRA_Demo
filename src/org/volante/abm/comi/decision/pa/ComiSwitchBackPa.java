@@ -11,6 +11,7 @@ import org.volante.abm.comi.decision.pa.ComiOfAdoptionPa.Properties;
 import org.volante.abm.comi.fr.ComiVariantProductionFR;
 import org.volante.abm.data.ModelData;
 import org.volante.abm.decision.pa.CraftyPa;
+import org.volante.abm.models.AgentAwareProductionModel;
 import org.volante.abm.schedule.RunInfo;
 
 import de.cesr.lara.components.LaraBehaviouralOption;
@@ -100,5 +101,7 @@ public class ComiSwitchBackPa extends CraftyPa<ComiSwitchBackPa> implements Lara
 		                .getFunctionalRoleMapByLabel()
 		                .get(((ComiVariantProductionFR) this.getAgent().getAgent().getFC().getFR())
 		                        .getAlternativeFrId()).getNewFunctionalComp());
+		((AgentAwareProductionModel) this.getAgent().getAgent().getFC().getProduction()).setAgent(this.getAgent()
+		        .getAgent());
 	}
 }

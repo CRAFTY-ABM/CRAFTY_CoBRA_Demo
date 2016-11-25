@@ -48,7 +48,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/users/0022/TEMPLATE/R/R-3.0.0/libr
 mkdir -p ./output/%SCENARIO%/%FIRST_RUN%-%RANDOM_SEED_OFFSET%
 
 # Start des Jobs:
-mpirun -np 16 -output-filename output/%SCENARIO%/%FIRST_RUN%-%RANDOM_SEED_OFFSET%/CRAFTY_%SCENARIONAME%_%FIRST_RUN%-%RANDOM_SEED_OFFSET% java -classpath ./config/log/ -Xmx55g -Dlog4j.configuration=./config/log/log4j_cluster.properties -jar CRAFTY-TEMPLATE.jar -f "%SCENARIO_FILE%" -d "%DATA_FOLDER%" -s %START_TICK% -e %END_TICK% -n %NUM_RUNS% -sr %FIRST_RUN% -r %NUM_RANDOM_SEEDS% -o %RANDOM_SEED_OFFSET%
+mpirun -np 16 -output-filename output/%SCENARIO%/%FIRST_RUN%-%RANDOM_SEED_OFFSET%/CRAFTY_%SCENARIONAME%_%FIRST_RUN%-%RANDOM_SEED_OFFSET% java -classpath ./config/log/ -Xmx55g -Dlog4j.configuration=./config/log/log4j_cluster.properties -jar CRAFTY_CoBRA_Demo.jar -f "%SCENARIO_FILE%" -d "%DATA_FOLDER%" -s %START_TICK% -e %END_TICK% -n %NUM_RUNS% -sr %FIRST_RUN% -r %NUM_RANDOM_SEEDS% -o %RANDOM_SEED_OFFSET%
 
 echo "########## Start R Scripts...#######################"
 ./config/R/%SCENARIO%/cluster/%FIRST_RUN%-%RANDOM_SEED_OFFSET%/executeQsub.sh

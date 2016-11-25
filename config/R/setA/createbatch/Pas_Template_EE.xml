@@ -21,7 +21,7 @@
 	</bofactory>
 	
 	<bofactory class="org.volante.abm.decision.pa.DoNothingPa$DoNothingPaFactory">
-		 <key>Conc_DoNothing_EE</key>
+		 <key>Conv_DoNothing_EE</key>
 		 <threshold>#Threshold</threshold>
 		 <preferenceUtilities>
 			 <utility pref="THRESHOLD">1.0</utility>
@@ -30,7 +30,7 @@
 	</bofactory>
 		
 	<bofactory class="org.volante.abm.comi.decision.pa.ComiSwitchBackPa$ComiSwitchBackPaFactory">
-		 <key>OF_SwitchConc_#Name_EE</key>	 
+		 <key>OF_SwitchConv_#Name_EE</key>	 
 		 <preferenceUtilities>
 			 <utility pref="WAttitude">1.0</utility>
 			 <utility pref="WSubjectiveNorm">1.0</utility>

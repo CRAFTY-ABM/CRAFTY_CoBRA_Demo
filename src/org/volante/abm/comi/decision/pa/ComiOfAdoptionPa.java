@@ -19,6 +19,7 @@ import org.volante.abm.data.ModelData;
 import org.volante.abm.data.Region;
 import org.volante.abm.decision.pa.CraftyPa;
 import org.volante.abm.example.AgentPropertyIds;
+import org.volante.abm.models.AgentAwareProductionModel;
 import org.volante.abm.param.RandomPa;
 import org.volante.abm.schedule.RunInfo;
 import org.volante.abm.serialization.Initialisable;
@@ -47,6 +48,11 @@ import de.cesr.parma.core.PmParameterManager;
  */
 public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements LaraPerformableBo {
 
+	/**
+	 * Logger
+	 */
+	static private Logger logger = Logger.getLogger(ComiOfAdoptionPa.class);
+
 	public static final String KEY = "ComiOfAdoptionPa";
 
 	public static final String PREFNAME_ATTITUDE = "WAttitude";
@@ -60,11 +66,6 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
 
 		UNCERTAINTY_SN, UNCERTAINY_BC, UNCERTAINTY_A;
 	}
-
-	/**
-	 * Logger
-	 */
-	static private Logger logger = Logger.getLogger(ComiOfAdoptionPa.class);
 
 	public static class ComiOfAdoptionPaFactory extends LBoFactory implements Initialisable {
 
@@ -168,15 +169,23 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
     public double getUpdatedPbc() {
 	    // update PBC (OF competition relative to conventional):
 		double compTerm = 0.0;
-		FunctionalRole fr = this.getAgent().getAgent().getFC().getFR();
-		double competitiveness =
-		        this.getAgent().getAgent().getRegion().getCompetitiveness(fr, this.getAgent().getAgent().getHomeCell());
 
-		if (fr instanceof ComiVariantProductionFR) {
-			compTerm =
-			        competitiveness == 0 ? Double.POSITIVE_INFINITY : ((this.getAgent().getAgent()
-			                .getProperty(AgentPropertyIds.COMPETITIVENESS) / competitiveness) - 1.0);
-		}
+		FunctionalRole fr =
+		        this.getAgent()
+		                .getAgent()
+		                .getRegion()
+		                .getFunctionalRoleMapByLabel()
+		                .get(((ComiVariantProductionFR) this.getAgent().getAgent().getFC().getFR())
+		                        .getAlternativeFrId());
+		double competitiveness =
+		        this.getAgent()
+		                .getAgent()
+		                .getRegion()
+.getCompetitiveness(fr, this.getAgent().getAgent().getHomeCell());
+
+		compTerm =
+		        this.getAgent().getAgent().getProperty(AgentPropertyIds.COMPETITIVENESS) == 0 ? Double.POSITIVE_INFINITY
+		                : (competitiveness / (this.getAgent().getAgent().getProperty(AgentPropertyIds.COMPETITIVENESS)) - 1.0);
 
 		// <- LOGGING
 		if (logger.isDebugEnabled()) {
@@ -259,6 +268,11 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
 	 * @see de.cesr.lara.components.LaraPerformableBo#perform()
 	 */
 	public void perform() {
+
+		// <- LOGGING
+		logger.info("Changing FC to OF...");
+		// LOGGING ->
+
 		this.getAgent()
 		        .getAgent()
 		        .setFC(this
@@ -268,6 +282,8 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
 		                .getFunctionalRoleMapByLabel()
 		                .get(((ComiVariantProductionFR) this.getAgent().getAgent().getFC().getFR())
 		                        .getAlternativeFrId()).getNewFunctionalComp());
+		((AgentAwareProductionModel) this.getAgent().getAgent().getFC().getProduction()).setAgent(this.getAgent()
+		        .getAgent());
 	}
 
 	public DoublePropertyProviderComp getProperties() {

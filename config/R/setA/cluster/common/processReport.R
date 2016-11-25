@@ -1,15 +1,15 @@
 #######################################################################
 # ApplicationScript for Creating PDF Reports of CRAFTY CoBRA ouptut
 #
-# Project:		TEMPLATE
-# Last update: 	26/08/2016
+# Project:		CRAFTY CoBRA Demo
+# Last update: 	16/11/2016
 # Author: 		Sascha Holzhauer
 #######################################################################
 
 # Only contained when the particular script is only executed on a specific maschine!
 # Otherwise. the maschine=specific file needs to be executed before.
 
-source("/PATH-TO/simp-machine_cluster.R")
+source("/exports/csce/eddie/geos/groups/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/config/R/simp-machine_cluster.R")
 require(methods)
 
 option_list <- list(
@@ -25,12 +25,10 @@ opt	<- optparse::parse_args(optparse::OptionParser(option_list=option_list))
 
 
 # Usually also in simp.R, but required here to find simp.R
-simp$sim$folder 	<- "parentFolder/_version"	
-
-simp$sim$task		<- paste(opt$run, opt$seed, sep="-") # Name of surounding folder, usually a description of task 
+simp$sim$folder <- "setA"	
+simp$sim$task <- paste(opt$firstrun, opt$seedoffset, sep="-") # Name of surounding folder, usually a description of task 
 
 preserve <- list()
-preserve$task 		<- simp$sim$task
 
 # simp$dirs$simp is set by maschine-specific file:
 setwd(paste(simp$dirs$simp, simp$sim$folder, "cluster/common", sep="/"))
@@ -43,20 +41,19 @@ runs = as.numeric(opt$firstrun):(as.numeric(opt$numrun)-1)
 rseeds = as.numeric(opt$seedoffset):(as.numeric(opt$seedoffset) + as.numeric(opt$numrandomseeds) - 1)
 for (run in runs) {
 	for (rseed in rseeds) {
-		# run = 280; rseed = 0
+		# run = 1; rseed = 1
 		
 		preserve$run = run
 		preserve$seed = rseed
+		preserve$task = paste(preserve$run, preserve$seed, sep="-") 
 		
-		
-		simp$sim$scenario				<- "A1"
 		simp$sim$runids 	<- c(paste(run, rseed, sep="-"))			# run to deal with
 		simp$sim$id			<- c(paste(run, rseed, sep="-"))
 		
 		#######################################################################
 		futile.logger::flog.threshold(futile.logger::INFO, name='crafty')
 		
-		simp$sim$rundesclabel	<- "Runs"
+		simp$sim$rundesclabel <- "Runs"
 		
 		source("./createReport.R")
 	}

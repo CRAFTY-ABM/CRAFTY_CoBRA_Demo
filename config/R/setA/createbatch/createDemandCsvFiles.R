@@ -1,8 +1,7 @@
 ##########################################################################################
-# Create capital CSV files for regions, integrating proportions of Conv/OF farmers FRs and 
-# according BTs
+# Create demand CSV files for regions
 #
-# Project:		CoBRA-Illustration
+# Project:		CoBRA_Demo
 # Last update: 	13/09/2016
 # Author: 		Sascha Holzhauer
 # Instructions:	Run machine-specific SIMP file first (see craftyr documentation)
@@ -22,8 +21,8 @@ years = 2000:2013
 ## initialisation
 simp$sim$filepartorder 		<- c("scenario", "U", "datatype", "U", "regions")
 demandfiledata <- input_tools_getModelInputFilenames(simp, extension="csv", 
-		datatype="demand")[[1]]
-demandfiledata$Filename <- gsub("_demand", "_demandOrg", demandfiledata$Filename)
+		datatype="demands")[[1]]
+demandfiledata$Filename <- gsub("_demands", "_demandsOrg", demandfiledata$Filename)
 
 getSpecificFrName <- function(service, specificum = "OF") {
 	parts <- splitstring(service, "_")
@@ -70,6 +69,6 @@ for (region in simp$sim$regions) {
 
 	## store CSV file
 	outfiledata <- input_tools_getModelInputFilenames(simp, extension="csv", 
-			datatype="demand")[[1]]
+			datatype="demands")[[1]]
 	write.csv(demands, file=outfiledata[outfiledata$Region == region, "Filename"], row.names = FALSE)	
 }
