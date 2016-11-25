@@ -19,7 +19,7 @@
 
 # Send mail when job is aborted or terminates
 #$ -m ae
-#$ -M TEMPLATE@TEMPLATE
+#$ -M Sascha.Holzhauer@ed.ac.uk
 
 echo "####################################################"
 echo "Job started on " `hostname` `date`
@@ -39,7 +39,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/users/sholzhau/R/R-3.0.0/library/r
 mkdir -p ./output/%SCENARIO%/%FIRST_RUN%-%RANDOM_SEED_OFFSET%
 
 # Start des Jobs:
-java -classpath ./config/log/ -Xmx1500m -Dlog4j.configuration=./config/log/log4j_cluster.properties -jar CRAFTY_CoBRA_NetSens.jar -f "%SCENARIO_FILE%" -d "%DATA_FOLDER%" -s %START_TICK% -e %END_TICK% -n %NUM_RUNS% -sr %FIRST_RUN% -r %NUM_RANDOM_SEEDS% -o %RANDOM_SEED_OFFSET%
+java -classpath ./config/log/ -Xmx1500m -Dlog4j.configuration=./config/log/log4j_cluster.properties -jar CRAFTY_CoBRA_Demo.jar -f "%SCENARIO_FILE%" -d "%DATA_FOLDER%" -s %START_TICK% -e %END_TICK% -n %NUM_RUNS% -sr %FIRST_RUN% -r %NUM_RANDOM_SEEDS% -o %RANDOM_SEED_OFFSET%
 
 echo "########## Start R Scripts...#######################"
 Rscript ./config/R/%SCENARIO%/cluster/common/process.R "--firstrun=%FIRST_RUN%" "--numrun=%NUM_RUNS%" "--seedoffset=%RANDOM_SEED_OFFSET%" "--numrandomseeds=%NUM_RANDOM_SEEDS%" "--noreport"

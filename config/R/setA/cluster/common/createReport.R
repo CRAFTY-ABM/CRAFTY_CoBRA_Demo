@@ -7,13 +7,15 @@ source("../../simp.R")
 
 futile.logger::flog.threshold(futile.logger::DEBUG, name='craftyr')
 
+preserve$task = paste(preserve$run, preserve$seed, sep="-")
 sh.ensurePath(paste(simp$dirs$simp, "/", simp$sim$folder, "/cluster/", preserve$task,"/", sep=""))
+
 preserve$wd <- getwd()
 setwd(paste(simp$dirs$simp, "/", simp$sim$folder, "/cluster/", preserve$task,"/", sep=""))
 simp$sim$id 	<- c(paste(preserve$run, "-", preserve$seed, sep=""))
 
 rnwFile =  paste(simp$dirs$simp, "/", simp$sim$folder, "/cluster/common/", "craftyr_report_", 
-		"RUN", "-SEED.Rnw", sep="")
+		"VERSION_RUN-SEED.Rnw", sep="")
 
 futile.logger::flog.debug("Knit %s", rnwFile,
 		name = "craftyr.netsens.createreport")	
@@ -28,11 +30,13 @@ futile.logger::flog.threshold(futile.logger::DEBUG, name='craftyr')
 
 simp$sim$id 	<- c(paste(preserve$run, "-", preserve$seed, sep=""))
 texFile =  paste(simp$dirs$simp, "/", simp$sim$folder, "/cluster/", preserve$task,"/", "craftyr_report_", 
-		"RUN", "-SEED.tex", sep="")
-file.rename(from=texFile, to=gsub("SEED", preserve$seed, gsub("RUN", preserve$run, texFile)))
-texFile <- gsub("SEED", preserve$seed, gsub("RUN", preserve$run, texFile))
+		"VERSION_RUN-SEED.tex", sep="")
+file.rename(from=texFile, to=gsub("SEED", preserve$seed, gsub("RUN", preserve$run, 
+						gsub("VERSION", simp$sim$folder, texFile))))
+texFile <- gsub("SEED", preserve$seed, gsub("RUN", preserve$run, gsub("VERSION", simp$sim$folder, texFile)))
 
 texi2dvi(file= texFile, pdf= TRUE, clean = FALSE)
+Sys.sleep(5)
 texi2dvi(file= texFile, pdf= TRUE, clean = TRUE)
 
 futile.logger::flog.debug("Copy to %s", simp$dirs$output$reports,

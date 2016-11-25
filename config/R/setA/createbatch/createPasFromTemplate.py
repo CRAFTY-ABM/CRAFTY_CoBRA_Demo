@@ -11,13 +11,14 @@ import re
 import glob, os
 from nt import mkdir
 
-countrycode = "LV"
+version = "V02"
+countrycode = "EE"
 templateFile = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/config/R/setA/createbatch/Pas_Template_" + countrycode + ".xml"
-dataFile = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/config/R/setA/createbatch/TPB_Params_" + countrycode + ".csv"
+dataFile = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/config/R/setA/createbatch/TPB_Params_" + countrycode + "_" + version + ".csv"
 
 # also change outfilename!
 
-outdir = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/data/pas/"
+outdir = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/data/pas/" + version + "/"
 
 indicator = "#"
 nameindicator = "#Name"

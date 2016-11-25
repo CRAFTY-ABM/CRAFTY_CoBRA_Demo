@@ -21,7 +21,7 @@
 	</bofactory>
 	
 	<bofactory class="org.volante.abm.decision.pa.DoNothingPa$DoNothingPaFactory">
-		 <key>Conc_DoNothing_LV</key>
+		 <key>Conv_DoNothing_LV</key>
 		 <threshold>0.6</threshold>
 		 <preferenceUtilities>
 			 <utility pref="THRESHOLD">1.0</utility>
@@ -29,7 +29,7 @@
 		 <agentclassname>org.volante.abm.agent.bt.LaraBehaviouralComponent</agentclassname>
 	</bofactory>
 		<bofactory class="org.volante.abm.comi.decision.pa.ComiSwitchBackPa$ComiSwitchBackPaFactory">
-		 <key>OF_SwitchConc_NA_Cluster5_LV</key>	 
+		 <key>OF_SwitchConv_NA_Cluster5_LV</key>	 
 		 <preferenceUtilities>
 			 <utility pref="WAttitude">1.0</utility>
 			 <utility pref="WSubjectiveNorm">1.0</utility>

@@ -4,21 +4,21 @@
 		source(simp$simpDefinition)
 
 # ADAPT:
-simp$sim$folder 	<- "parentFolder/_version"
+simp$sim$folder 	<- "setA"
 
 setwd(paste(simp$dirs$simp, sep="/"))
 source(paste(simp$dirs$simp, simp$sim$folder, "simp.R", sep="/"))
 
 
-randomSeed 	<- 0
-firstrunid 	<- 0
-lastrunid 	<- 1
+randomSeed 	<- 2
+firstrunid 	<- 1
+lastrunid 	<- 2
 
 simps <- list()
 for(i in firstrunid:lastrunid) {
 	s <- simp
-	s$sim$id					<- paste(i, "-", randomSeed, sep="")
-	s$sim$shortid				<- paste(i, "-", randomSeed, sep="")
+	s$sim$id					<- paste(i, "-", randomSeed-i, sep="")
+	s$sim$shortid				<- paste(i, "-", randomSeed-i, sep="")
 	simps <- append(simps, list(s))
 }
 
@@ -46,8 +46,8 @@ opts_chunk$set(comment=NA, echo=FALSE, results='hide', fig.pos='h!', fig.align='
 \usepackage{float}
 \usepackage{cprotect}
 
-\cprotect\title{TEMPLATE\\\verb|\Sexpr{simp$sim$version}|}
-\author{TEMPLATE}
+\cprotect\title{CRAFTY CoBRA Demo\\\verb|\Sexpr{simp$sim$version}|}
+\author{Sascha Holzhauer}
 
 \begin{document}
 
@@ -73,6 +73,10 @@ opts_chunk$set(comment=NA, echo=FALSE, results='hide', fig.pos='h!', fig.align='
 \subsection{AFT Composition}
 <<aftcomposition>>=
 		hl_comp_aggregate_aftcompositions(simp, simps, dataname="dataAggregateAFTComposition")
+		
+		hl_comp_aggregate_aftcompositions(simp, simps, dataname = "dataAggregateAFTComposition",
+				afts = c("COF_Cereal", "COF_Livestock", "NCOF_Cereal", "NCOF_Livestock"))
+		
 @
 
 \subsection{Demand and Supply}

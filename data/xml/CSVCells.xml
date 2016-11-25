@@ -4,5 +4,6 @@
 	<xColumn>x</xColumn>
 	<yColumn>y</yColumn>
 	<unmanagedIdentifier>UNMANAGED</unmanagedIdentifier>
-	<csvFile>${@@(../worlds/%w/regionalisations/%k/capitals; CapitalFolder)/%r_capitals.csv}</csvFile>
+	<agentAssembler class="org.volante.abm.comi.agent.ComiAgentAssembler"></agentAssembler>
+	<csvFile>${@@(../worlds/%w/regionalisations/%k/capitals; CapitalFolder)/%r_Capitals.csv}</csvFile>
 </cellInitialiser>

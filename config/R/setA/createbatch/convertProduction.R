@@ -7,9 +7,10 @@ source("../simp.R")
 
 for (aft in simp$mdata$aftNames[-1]) {
 	
-	# aft = simp$mdata$aftNames[7]
+	# aft = simp$mdata$aftNames[3]
 	# get productivity table 
-	data <- input_csv_param_productivities(simp, aft, filenameprefix = "", filenamepostfix = "")
+	data <- input_csv_param_productivities(simp, aft, filenameprefix = "", filenamepostfix = "_org", 
+			aftwisefolder = FALSE)
 	
 	aftParamIds <- hl_getAgentParamId(simp)
 	aftparamdata <- input_csv_param_agents(simp, aft)
@@ -17,15 +18,26 @@ for (aft in simp$mdata$aftNames[-1]) {
 	filename <- paste(simp$dirs$param$getparamdir(simp), hl_getBaseDirAdaptation(simp), 
 			as.character(filename), sep="/")
 	newfilename <- gsub(".csv", "_org.csv", filename)
-	file.rename(filename, newfilename)
-	
-	data[data$X == "Cereal", "Production"] <- data[data$X == "Cereal", "Production"] * 155
-	data[data$X == "OF_Cereal", "Production"] <- data[data$X == "OF_Cereal", "Production"] * 155
+	#file.rename(filename, newfilename)
 
-	data[data$X == "Meat", "Production"] <- data[data$X == "Meat", "Production"] * 24.5
-	data[data$X == "OF_Meat", "Production"] <- data[data$X == "OF_Meat", "Production"] * 24.5
+	if (grepl("OF", aft)) {
+		data[data$Service == "Cereal", "Production"] <- 
+				paste("(CTICK-START_TICK<=1)",  as.numeric(data[data$Service == "OF_Cereal", "Production"]) * 155, sep="")
+		data[data$Service == "OF_Cereal", "Production"] <-
+				paste("(CTICK-START_TICK>1)", as.numeric(data[data$Service == "OF_Cereal", "Production"]) * 155, sep="")
+		
+		data[data$Service == "Meat", "Production"] <- 
+				paste("(CTICK-START_TICK<=1)", as.numeric(data[data$Service == "OF_Meat", "Production"]) * 24.5, sep="")
+		data[data$Service == "OF_Meat", "Production"] <- 
+				paste("(CTICK-START_TICK>1)", as.numeric(data[data$Service == "OF_Meat", "Production"]) * 24.5, sep="")
+	} else {
+		data[data$Service == "Cereal", "Production"] <- as.numeric(data[data$Service == "Cereal", "Production"]) * 155
+		data[data$Service == "OF_Cereal", "Production"] <- as.numeric(data[data$Service == "OF_Cereal", "Production"]) * 155
+	
+		data[data$Service == "Meat", "Production"] <- as.numeric(data[data$Service == "Meat", "Production"]) * 24.5
+		data[data$Service == "OF_Meat", "Production"] <- as.numeric(data[data$Service == "OF_Meat", "Production"]) * 24.5
+	}
 	
 	#filename <- gsub(".csv", "_test.csv", filename)
-	colnames(data)[colnames(data) == "X"] <- ""
 	write.csv(data, file = filename, row.names = FALSE)
 }

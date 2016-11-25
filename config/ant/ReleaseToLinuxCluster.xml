@@ -18,7 +18,7 @@
  	<property file="../../project.properties"/>
  	<property file="../../local.properties"/>
  	
- 	<property name="releaseName" value="CRAFTY-ImpressionsEU"/>
+ 	<property name="releaseName" value="CRAFTY_CoBRA_Demo"/>
  	
  	<!-- takes jars from here (important when they're not included in the project itself)-->	
  	<property name="CRAFTY-project" value="../../"/>
@@ -36,9 +36,9 @@
  	<property name="manifest_file" value="./manifest/META-INF/MANIFEST.MF"/>	
  	 	
  	
- 	<property name="remote_base_dir" value="TEMPLATE"/>
- 	<property name="remote_base_dir_prefix_fs_ssh" value="/exports/work/geos_lurg/"/>
- 	<property name="remote_host" value="eddie.ecdf.ed.ac.uk"/>
+ 	<property name="remote_base_dir" value="models/CRAFTY_CoBRA_Demo"/>
+ 	<property name="remote_base_dir_prefix_fs_ssh" value="/exports/csce/eddie/geos/groups/LURG/"/>
+ 	<property name="remote_host" value="eddie3.ecdf.ed.ac.uk"/>
  	
  	<property name="remote_config_file_source" value="${remote_base_dir_prefix_fs}${remote_base_dir}/standard"/>
  	<property name="remote_config_file_source_ssh" value="${remote_base_dir_prefix_fs_ssh}${remote_base_dir}/standard"/>

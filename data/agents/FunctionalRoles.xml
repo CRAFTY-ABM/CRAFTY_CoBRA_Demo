@@ -18,7 +18,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -42,7 +42,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -66,7 +66,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -90,7 +90,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -112,7 +112,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -136,7 +136,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, productionCsvFile)}" />
 	</fRole>
 
@@ -160,7 +160,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -184,7 +184,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, productionCsvFile)}" />
 	</fRole>
 	
@@ -208,7 +208,7 @@
  			min="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, serviceLevelNoiseMin)}" 
  			max="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, serviceLevelNoiseMax)}"/>
  		
-		<production class="org.volante.abm.example.SimpleProductionModel"
+		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, productionCsvFile)}" />
 	</fRole>
 </functionalRoles>
