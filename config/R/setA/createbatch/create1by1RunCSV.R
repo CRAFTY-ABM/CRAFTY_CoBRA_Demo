@@ -62,7 +62,7 @@ for (percentageTakeOvers in simp$batchcreation$percentage_takeovers) {
 	aftParamIdScenario = -1
 }
 
-filename = paste(simp$batchcreation$inputdatadir , '/Runs.csv', sep='')
+filename = paste(simp$dirs$param$getparamdir(simp, data="runs") , '/Runs.csv', sep='')
 shbasic::sh.ensurePath(filename, stripFilename = TRUE)
 futile.logger::flog.info("Write Run.csv file %s...",
 		filename,

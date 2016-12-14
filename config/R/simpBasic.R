@@ -46,10 +46,15 @@ simp$csv$cname_y			<- "Y"
 simp$mdata$capitals 		<- c("Cprod", "Fprod", "Infra", "Grass", "Nat", "Econ")
 simp$mdata$services			<- c("Meat", "Cereal" ,"Conservation", "Timber", "OF_Meat", "OF_Cereal")
 
-simp$mdata$aftNames			<- c("-1" = "Unmanaged", "0" = 'COF_Cereal', "1" = 'NCOF_Cereal', 
-								  "2" = 'COF_Livestock', "3" = 'NCOF_Livestock',
-								  "4" = 'CConv_Cereal', "5" = 'NCConv_Cereal', "6" = 'CConv_Livestock', 
-								  "7" = 'NCConv_Livestock', "8" = 'Forester')
+simp$mdata$aftNames			<- c("-1" = "Unmanaged", "0" = 'CConv_Cereal', "1" = 'NCConv_Cereal', 
+								"2" = 'CConv_Livestock', "3" = 'NCConv_Livestock',
+								"4" = 'Forester', "5" = 'COF_Cereal', "6" = 'NCOF_Cereal', 
+								"7" = 'COF_Livestock', "8" = 'NCOF_Livestock')
+
+#simp$mdata$aftNames			<- c("-1" = "Unmanaged", "0" = 'COF_Cereal', "1" = 'NCOF_Cereal', 
+#								  "2" = 'COF_Livestock', "3" = 'NCOF_Livestock',
+#								  "4" = 'CConv_Cereal', "5" = 'NCConv_Cereal', "6" = 'CConv_Livestock', 
+#								  "7" = 'NCConv_Livestock', "8" = 'Forester')
 
 simp$dirs$param$getparamdir <- function(simp, datatype = NULL) {
 	return <- paste(simp$dirs$data,
@@ -92,15 +97,27 @@ simp$fig$facetlabelsize 	<- 14
 
 simp$colours$AFT <- c(
 		"-1" = "black", 
-		"0" = 'deepskyblue4',
-		"1" = 'deepskyblue', 
-		"2" = 'darkorchid4',
-		"3" = 'darkorchid1',
-		"4" = 'orange1',
-		"5" = 'lightgoldenrod',
-		"6" = 'indianred4', 
-		"7" = 'indianred1',
-		"8" = 'green4')
+		"0" = 'orange1',
+		"1" = 'lightgoldenrod',
+		"2" = 'indianred4', 
+		"3" = 'indianred1',
+		"4" = 'green4',
+		"5" = 'deepskyblue4',
+		"6" = 'deepskyblue', 
+		"7" = 'darkorchid4',
+		"8" = 'darkorchid1')
+
+#simp$colours$AFT <- c(
+#		"-1" = "black", 
+#		"0" = 'deepskyblue4',
+#		"1" = 'deepskyblue', 
+#		"2" = 'darkorchid4',
+#		"3" = 'darkorchid1',
+#		"4" = 'orange1',
+#		"5" = 'lightgoldenrod',
+#		"6" = 'indianred4', 
+#		"7" = 'indianred1',
+#		"8" = 'green4')
 
 simp$colours$Service <- c(	"-1" = "black",
 		"Meat" 			= "indianred1",

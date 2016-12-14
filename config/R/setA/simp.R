@@ -54,7 +54,7 @@ simp$batchcreation$gi_stages				<- c("medium")
 simp$batchcreation$placeholders				<- c(0)
 
 simp$batchcreation$inputdatadirs$aftparams	<- paste(simp$batchcreation$inputdatadir, "/agents", sep="")
-simp$batchcreation$inputdatadirs$production	<- paste(simp$batchcreation$inputdatadir, "/production", sep="")
+simp$batchcreation$inputdatadirs$production	<- paste("/production/", sep="")
 simp$batchcreation$inputdatadirs$competition	<- paste(simp$batchcreation$inputdatadir, "/competition", sep="")
 simp$batchcreation$inputdatadirs$allocation	<- paste(simp$batchcreation$inputdatadir, "/allocation", sep="")
 simp$batchcreation$inputdatadirs$worldfile	<- paste(simp$batchcreation$inputdatadir, "/world", sep="")

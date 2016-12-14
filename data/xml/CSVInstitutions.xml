@@ -1,0 +1,6 @@
+<cellInitialiser class="org.volante.abm.serialization.CsvInstitutionPopulator">
+	<xColumn>x</xColumn>
+	<yColumn>y</yColumn>
+	<classnameColumnName>Classname</classnameColumnName>
+	<csvFile>${@@(../worlds/%w/regionalisations/%k/institutions; InstitutionCsv)/%r_Institutions.csv}</csvFile>
+</cellInitialiser>

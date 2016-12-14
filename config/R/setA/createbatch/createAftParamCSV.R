@@ -110,8 +110,8 @@ for (aft in afts) {
 					
 					d <- c(d,tData[tData$Scenario == scenario & tData$AFT == aft,c(-1,-2,-3)] * giFactor * guFactor)
 			
-					d["productionCsvFile"] <- paste(simp$batchcreation$versiondirs$production, 
-							"/production/", aft, ".csv", sep="")
+					d["productionCsvFile"] <- paste(simp$batchcreation$inputdatadirs$production, 
+							 aft, ".csv", sep="")
 					
 					data <- rbind(data, as.data.frame(d, stringsAsFactors=FALSE))
 				}

@@ -310,6 +310,8 @@
 						replace=""
 						global="true"
 		/>
+		
+		<property name="data_subfolder_extract" value="${data_subfolder_extract_raw}"/>	
 		<propertyregex 	property="data_subfolder_extract"
 								input="${data_subfolder_extract_raw}"
 								regexp="\\"

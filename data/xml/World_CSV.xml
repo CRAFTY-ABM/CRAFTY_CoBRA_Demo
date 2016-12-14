@@ -1,5 +1,5 @@
 <world idColumn="ID" competitionColumn="Competition" allocationColumn="Allocation" demandColumn="Demand"
  btColumn = "BehaviouralTypes" frColumn="FunctionalRoles" cellColumn="CellInitialisers" 
- agentColumn="AgentInitialisers" laraModelColumn="LARAmodel">
+ agentColumn="AgentInitialisers" laraModelColumn="LARAmodel" socNetColumn="SocialNetwork">
 	<regionCSV>${@(Runs.csv, RegionCsvFile)}</regionCSV>
 </world>

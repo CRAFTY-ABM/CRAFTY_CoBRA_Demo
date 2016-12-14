@@ -6,6 +6,7 @@ package org.volante.abm.comi.decision.pa;
 
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.volante.abm.agent.bt.LaraBehaviouralComponent;
 import org.volante.abm.comi.decision.pa.ComiOfAdoptionPa.Properties;
 import org.volante.abm.comi.fr.ComiVariantProductionFR;
@@ -30,6 +31,10 @@ import de.cesr.lara.toolbox.config.xml.LBoFactory;
  */
 public class ComiSwitchBackPa extends CraftyPa<ComiSwitchBackPa> implements LaraPerformableBo {
 
+	/**
+	 * Logger
+	 */
+	static private Logger logger = Logger.getLogger(ComiSwitchBackPa.class);
 
 	public static class ComiSwitchBackPaFactory extends LBoFactory {
 
@@ -87,11 +92,16 @@ public class ComiSwitchBackPa extends CraftyPa<ComiSwitchBackPa> implements Lara
 	}
 
 	/**
-	 * Switches the FR from organic farming to conventional are the other way around depending on current FR.
+	 * Switches the FR from organic farming to conventional or the other way around depending on current FR.
 	 * 
 	 * @see de.cesr.lara.components.LaraPerformableBo#perform()
 	 */
 	public void perform() {
+
+		// <- LOGGING
+		logger.info("Switching FC back to convential...");
+		// LOGGING ->
+
 		this.getAgent()
 		        .getAgent()
 		        .setFC(this

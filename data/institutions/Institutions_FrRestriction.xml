@@ -1,3 +1,0 @@
-<institution class="org.volante.abm.institutions.FrRestrictingInsitution">
-	<csvFileRestrictedAllocations>csv/AllocationTypeRestrictions.csv</csvFileRestrictedAllocations>
-</institution>

@@ -11,7 +11,7 @@ import re
 import glob, os
 from nt import mkdir
 
-version = "V02"
+version = "V03"
 countrycode = "EE"
 templateFile = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/config/R/setA/createbatch/Pas_Template_" + countrycode + ".xml"
 dataFile = "C:/Data/LURG/workspace/CRAFTY_CoBRA_Demo/config/R/setA/createbatch/TPB_Params_" + countrycode + "_" + version + ".csv"
