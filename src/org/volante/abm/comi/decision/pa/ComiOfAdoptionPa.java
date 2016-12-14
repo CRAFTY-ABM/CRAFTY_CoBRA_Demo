@@ -72,8 +72,6 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
 		protected ModelData mdata;
 		protected RunInfo rinfo;
 
-		protected DoublePropertyProviderComp properties = new DoublePropertyProviderComp();
-
 		@Element(required = false)
 		protected Distribution attitude = null;
 
@@ -103,19 +101,19 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
 			this.subjectiveNorm.init(region.getRandom().getURService(), RandomPa.RANDOM_SEED_RUN_ADOPTION.name());
 			this.uncertainty_sn.init(region.getRandom().getURService(), RandomPa.RANDOM_SEED_RUN_ADOPTION.name());
 			this.behaviouralControl.init(region.getRandom().getURService(), RandomPa.RANDOM_SEED_RUN_ADOPTION.name());
-
-			this.properties.setProperty(Properties.ATTITUDE, this.attitude.sample());
-			this.properties.setProperty(Properties.UNCERTAINTY_A, this.uncertainty_a.sample());
-
-			this.properties.setProperty(Properties.SUBJECTIVE_NORM, this.subjectiveNorm.sample());
-			this.properties.setProperty(Properties.UNCERTAINTY_SN, this.uncertainty_sn.sample());
-
-			this.properties.setProperty(Properties.BEHAVIOURAL_CONTROL, this.behaviouralControl.sample());
 		}
 
 		public LaraBehaviouralOption<?, ?> assembleBo(LaraAgent<?, ?> lbc, Object modelId) {
-			return new ComiOfAdoptionPa(this.key, (LaraBehaviouralComponent) lbc, this.preferenceWeights,
-			        this.properties);
+			DoublePropertyProviderComp properties = new DoublePropertyProviderComp();
+			properties.setProperty(Properties.ATTITUDE, this.attitude.sample());
+			properties.setProperty(Properties.UNCERTAINTY_A, this.uncertainty_a.sample());
+
+			properties.setProperty(Properties.SUBJECTIVE_NORM, this.subjectiveNorm.sample());
+			properties.setProperty(Properties.UNCERTAINTY_SN, this.uncertainty_sn.sample());
+
+			properties.setProperty(Properties.BEHAVIOURAL_CONTROL, this.behaviouralControl.sample());
+
+			return new ComiOfAdoptionPa(this.key, (LaraBehaviouralComponent) lbc, this.preferenceWeights, properties);
 		}
 	}
 
@@ -193,7 +191,7 @@ public class ComiOfAdoptionPa extends CraftyPa<ComiOfAdoptionPa> implements Lara
 		}
 		// LOGGING ->
 
-		return Math.max(1.0, properties.getProperty(Properties.BEHAVIOURAL_CONTROL) + compTerm);
+		return Math.min(1.0, properties.getProperty(Properties.BEHAVIOURAL_CONTROL) + compTerm);
     }
 
 	/**

@@ -211,4 +211,10 @@
 		<production class="org.volante.abm.example.DynamicMaxProductionModel"
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, productionCsvFile)}" />
 	</fRole>
+	
+	<fRole class="org.volante.abm.agent.fr.DefaultFR" label="Inst_Advise_A" serialID="9"
+		givingUpMean="0" givingInMean="0">
+		<production class="org.volante.abm.example.SimpleProductionModel"></production>
+	</fRole>
+	
 </functionalRoles>

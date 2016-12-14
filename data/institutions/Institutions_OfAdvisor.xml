@@ -1,0 +1,4 @@
+<institution id="Advisor" class="org.volante.abm.comi.institution.ComiOfAdvisingInstitution">
+	<frLabel>Inst_Advise_A</frLabel>
+	<pbcFactor>1.3</pbcFactor>
+</institution>

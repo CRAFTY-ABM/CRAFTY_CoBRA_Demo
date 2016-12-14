@@ -18,7 +18,7 @@ import org.volante.abm.serialization.Initialisable;
 public class ComiPropertyInitialiser implements Initialisable {
 
 	public enum AgentProperty implements PropertyId {
-		RECEPTIVITY_SUBSIDY, START_TICK;
+		RECEPTIVITY_SUBSIDY, START_TICK, PBC_FACTOR;
 	}
 
 	/**

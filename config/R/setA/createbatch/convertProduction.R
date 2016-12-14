@@ -4,6 +4,8 @@ simp$sim$folder 	<- "setA"
 setwd(paste(simp$dirs$simp, simp$sim$folder, "createbatch", sep="/"))
 source("../simp.R")
 
+adaptCereal = 155
+adaptLivestock = 24.5
 
 for (aft in simp$mdata$aftNames[-1]) {
 	
@@ -22,20 +24,20 @@ for (aft in simp$mdata$aftNames[-1]) {
 
 	if (grepl("OF", aft)) {
 		data[data$Service == "Cereal", "Production"] <- 
-				paste("(CTICK-START_TICK<=1)",  as.numeric(data[data$Service == "OF_Cereal", "Production"]) * 155, sep="")
+				paste("(CTICK-START_TICK<=1)",  as.numeric(data[data$Service == "OF_Cereal", "Production"]) * adaptCereal, sep="")
 		data[data$Service == "OF_Cereal", "Production"] <-
-				paste("(CTICK-START_TICK>1)", as.numeric(data[data$Service == "OF_Cereal", "Production"]) * 155, sep="")
+				paste("(CTICK-START_TICK>1)", as.numeric(data[data$Service == "OF_Cereal", "Production"]) * adaptCereal, sep="")
 		
 		data[data$Service == "Meat", "Production"] <- 
-				paste("(CTICK-START_TICK<=1)", as.numeric(data[data$Service == "OF_Meat", "Production"]) * 24.5, sep="")
+				paste("(CTICK-START_TICK<=1)", as.numeric(data[data$Service == "OF_Meat", "Production"]) * adaptLivestock, sep="")
 		data[data$Service == "OF_Meat", "Production"] <- 
-				paste("(CTICK-START_TICK>1)", as.numeric(data[data$Service == "OF_Meat", "Production"]) * 24.5, sep="")
+				paste("(CTICK-START_TICK>1)", as.numeric(data[data$Service == "OF_Meat", "Production"]) * adaptLivestock, sep="")
 	} else {
-		data[data$Service == "Cereal", "Production"] <- as.numeric(data[data$Service == "Cereal", "Production"]) * 155
-		data[data$Service == "OF_Cereal", "Production"] <- as.numeric(data[data$Service == "OF_Cereal", "Production"]) * 155
+		data[data$Service == "Cereal", "Production"] <- as.numeric(data[data$Service == "Cereal", "Production"]) * adaptCereal
+		data[data$Service == "OF_Cereal", "Production"] <- as.numeric(data[data$Service == "OF_Cereal", "Production"]) * adaptCereal
 	
-		data[data$Service == "Meat", "Production"] <- as.numeric(data[data$Service == "Meat", "Production"]) * 24.5
-		data[data$Service == "OF_Meat", "Production"] <- as.numeric(data[data$Service == "OF_Meat", "Production"]) * 24.5
+		data[data$Service == "Meat", "Production"] <- as.numeric(data[data$Service == "Meat", "Production"]) * adaptLivestock
+		data[data$Service == "OF_Meat", "Production"] <- as.numeric(data[data$Service == "OF_Meat", "Production"]) * adaptLivestock
 	}
 	
 	#filename <- gsub(".csv", "_test.csv", filename)

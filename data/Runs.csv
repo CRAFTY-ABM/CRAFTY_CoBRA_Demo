@@ -1,0 +1,2 @@
+"run","Scenario","Version","World","Regionalisation","aftParamId","RegionCsvFile","Competition_xml","Allocation_xml","Allocation_percentageCell","Allocation_percentageTakeovers","Insititutions_xml","SocialNetwork_xml"
+0,"B1","setB","NEEU","2",0,"//worlds/NEEU/regionalisations/2.csv","//competition/Competition_linear.xml","//allocation/GiveUpGiveInAllocationModel.xml",30,30,"institutions/Institutions_CapitalDynamics.xml","SocialNetwork_HDFF.xml"
