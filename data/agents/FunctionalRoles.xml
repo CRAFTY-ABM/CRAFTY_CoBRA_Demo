@@ -2,10 +2,11 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="CConv_Cereal" serialID="0"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpProb)}"
+		allocationProbability="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, allocationProbability)}">
 		
 		<alternativeFr>COF_Cereal</alternativeFr>
-
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Cereal.csv, givingUpDistributionSD)}"/>
@@ -26,10 +27,11 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCConv_Cereal" serialID="1"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, allocationProbability)}">
 		
 		<alternativeFr>NCOF_Cereal</alternativeFr>
-
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Cereal.csv, givingUpDistributionSD)}"/>
@@ -50,7 +52,8 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="CConv_Livestock" serialID="2"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_CConv_Livestock.csv, allocationProbability)}">
 		
 		<alternativeFr>COF_Livestock</alternativeFr>
 
@@ -74,10 +77,11 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCConv_Livestock" serialID="3"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, allocationProbability)}">
 		
 		<alternativeFr>NCOF_Livestock</alternativeFr>
-
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCConv_Livestock.csv, givingUpDistributionSD)}"/>
@@ -98,8 +102,9 @@
 	<fRole class="org.volante.abm.agent.fr.VariantProductionFR" label="Forester" serialID="4"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpProb)}">
-		
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, allocationProbability)}">
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_Forester.csv, givingUpDistributionSD)}"/>
@@ -120,10 +125,11 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="COF_Cereal" serialID="5"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, allocationProbability)}">
 		
 		<alternativeFr>CConv_Cereal</alternativeFr>
-
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Cereal.csv, givingUpDistributionSD)}"/>
@@ -144,10 +150,11 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCOF_Cereal" serialID="6"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, allocationProbability)}">
 		
 		<alternativeFr>NCConv_Cereal</alternativeFr>
-
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Cereal.csv, givingUpDistributionSD)}"/>
@@ -168,10 +175,11 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="COF_Livestock" serialID="7"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, allocationProbability)}">
 		
 		<alternativeFr>CConv_Livestock</alternativeFr>
-
+			
  		<givingUpDistribution class="com.moseph.modelutils.distribution.NormalDistribution" 
  			mean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpDistributionMean)}" 
  			sd="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_COF_Livestock.csv, givingUpDistributionSD)}"/>
@@ -192,7 +200,8 @@
 	<fRole class="org.volante.abm.comi.fr.ComiVariantProductionFR" label="NCOF_Livestock" serialID="8"
 		givingUpMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpDistributionMean)}"
 		givingInMean="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingInDistributionMean)}"
-		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpProb)}">
+		givingUpProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, givingUpProb)}"
+		allocationProbability = "${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, allocationProbability)}">
 		
 		<alternativeFr>NCConv_Livestock</alternativeFr>
 
@@ -212,8 +221,8 @@
 			csvFile="${@(Runs.csv ~ @@(agents; AftParamFolder)/AftParams_NCOF_Livestock.csv, productionCsvFile)}" />
 	</fRole>
 	
-	<fRole class="org.volante.abm.agent.fr.DefaultFR" label="Inst_Advise_A" serialID="9"
-		givingUpMean="0" givingInMean="0">
+	<fRole class="org.volante.abm.agent.fr.DefaultInstitutionalFR" label="Inst_Advise_A" serialID="9"
+		givingUpMean="Infinity" givingInMean="0">
 		<production class="org.volante.abm.example.SimpleProductionModel"></production>
 	</fRole>
 	

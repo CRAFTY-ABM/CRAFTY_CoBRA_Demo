@@ -33,12 +33,15 @@ simp$dirs$simp				<- paste(simp$dirs$project, "./config/R/", sep="")
 simp$dirs$outputdir			<- "L:/Projects/Impressions/Modelling/CRAFTY_CoBRA_Demo/Output/%VFOLDER%/"
 simp$dirs$outputdirWS		<- paste(simp$dirs$project, "/Output/%VFOLDER%/", sep="")
 
-simp$dirs$output$simulation	<- paste(simp$dirs$outputdirWS, sep="")
+simp$dirs$output$simulation	<- paste(simp$dirs$outputdir, sep="")
 simp$dirs$output$data		<- paste(simp$dirs$project, "Data/", sep="")
 simp$dirs$output$rdata		<- paste(simp$dirs$outputdir, "RData/", sep="") 
 simp$dirs$output$raster		<- paste(simp$dirs$outputdir, "Raster/", sep="") 
 simp$dirs$output$figures	<- paste(simp$dirs$outputdir, "Figures/", sep="")
 simp$dirs$output$reports	<- paste(simp$dirs$outputdir, "Reports/", sep="")
+
+simp$dirs$output$reports	<- paste(simp$dirs$project, "/Output/", sep="")
+
 simp$dirs$output$tables		<- paste(simp$dirs$outputdir, "/Tables/", sep="")
 simp$dirs$output$csv		<- paste(simp$dirs$outputdir, "/CSV/", sep="")
 simp$dirs$output$runinfo	<- "C:/Data/LURG/Projects/IMPRESSIONS/Modelling/CRAFTY-CoBRA_Illustration/CRAFTY_CoBRA-Illustration_Runs.ods"

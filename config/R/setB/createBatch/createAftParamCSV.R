@@ -16,7 +16,8 @@
 #######################################################################
 
 params <- c('givingIn',	'givingInDistributionMean',	'givingInDistributionSD', 'givingUp',
-		'givingUpDistributionMean', 'givingUpDistributionSD', 'serviceLevelNoiseMin', 'serviceLevelNoiseMax')
+		'givingUpDistributionMean', 'givingUpDistributionSD', 'serviceLevelNoiseMin', 
+		'serviceLevelNoiseMax', 'allocationProbability')
 
 capitalSensitivity <- "medium"
 
@@ -98,21 +99,25 @@ for (aft in afts) {
 	for (scenario in simp$batchcreation$scenarios) {
 			for (giStage in giStages) {
 				for (guStage in guStages) {	
-					aftParamId = aftParamId + 1
-		
-					d <- c()
-					d["aftParamId"] <- aftParamId
-					
-					giFactor <- paramFactorsGi[[giStage]][aft,]
-					giFactor <- unlist(lapply(giFactor, adaptG, aft))
-					guFactor <- paramFactorsGu[[guStage]][aft,]
-					guFactor <- unlist(lapply(guFactor, adaptG, aft))
-					
-					d <- c(d,tData[tData$Scenario == scenario & tData$AFT == aft,c(-1,-2,-3)] * giFactor * guFactor)
+					for (allocationProbability in simp$batchcreation$allocationProbabilities) {	
+						aftParamId = aftParamId + 1
 			
-					d["productionCsvFile"] <- paste(simp$batchcreation$inputdatadirs$production, aft, ".csv", sep="")
-					
-					data <- rbind(data, as.data.frame(d, stringsAsFactors=FALSE))
+						d <- c()
+						d["aftParamId"] <- aftParamId
+						
+						giFactor <- paramFactorsGi[[giStage]][aft,]
+						giFactor <- unlist(lapply(giFactor, adaptG, aft))
+						guFactor <- paramFactorsGu[[guStage]][aft,]
+						guFactor <- unlist(lapply(guFactor, adaptG, aft))
+						
+						d <- c(d,tData[tData$Scenario == scenario & tData$AFT == aft,c(-1,-2,-3)] * giFactor * guFactor)
+				
+						d["allocationProbability"] <- allocationProbability
+						d["productionCsvFile"] <- paste(simp$batchcreation$inputdatadirs$production, 
+								 aft, ".csv", sep="")
+						
+						data <- rbind(data, as.data.frame(d, stringsAsFactors=FALSE))
+					}
 				}
 		}
 	}	

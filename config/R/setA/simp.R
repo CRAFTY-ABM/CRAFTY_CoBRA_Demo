@@ -52,6 +52,7 @@ simp$batchcreation$agentparam_tmpldir		<- paste(simp$batchcreation$inputdatadir,
 simp$batchcreation$gu_stages				<- c("medium")
 simp$batchcreation$gi_stages				<- c("medium")
 simp$batchcreation$placeholders				<- c(0)
+simp$batchcreation$allocationProbabilities	<- c(1.0, 0.3)
 
 simp$batchcreation$inputdatadirs$aftparams	<- paste(simp$batchcreation$inputdatadir, "/agents", sep="")
 simp$batchcreation$inputdatadirs$production	<- paste("/production/", sep="")
@@ -65,7 +66,7 @@ simp$dirs$param$getparamdir <- function(simp, datatype = NULL) {
 	return <- paste(simp$dirs$data,
 			if (is.null(datatype)) { 
 						""
-					} else if (datatype %in% c("capitals")) {
+					} else if (datatype %in% c("Capitals")) {
 						paste("worlds", simp$sim$worldname,
 								if(!is.null(simp$sim$regionalisation)) paste("regionalisations", 
 											simp$sim$regionalisation, sep="/"), "capitals", sep="/")

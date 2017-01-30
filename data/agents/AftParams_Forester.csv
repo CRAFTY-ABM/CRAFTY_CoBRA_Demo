@@ -1,2 +1,3 @@
-"aftParamId","givingInDistributionMean","givingInDistributionSD","givingUpDistributionMean","givingUpDistributionSD","serviceLevelNoiseMin","serviceLevelNoiseMax","givingUpProb","productionCsvFile"
-0,1,0.03,0,0.03,0,0.1,0.2,"/production/Forester.csv"
+"aftParamId","givingInDistributionMean","givingInDistributionSD","givingUpDistributionMean","givingUpDistributionSD","serviceLevelNoiseMin","serviceLevelNoiseMax","givingUpProb","allocationProbability","productionCsvFile"
+0,1,0.03,0,0.03,0,0.1,0.2,1,"/production/Forester.csv"
+1,1,0.03,0,0.03,0,0.1,0.2,0.3,"/production/Forester.csv"

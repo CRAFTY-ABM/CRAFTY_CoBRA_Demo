@@ -1,0 +1,7 @@
+"Service","Cprod","Fprod","Infra","Lprod","Nat","Econ","Production"
+"Meat",0.3,0.1,0.3,0.4,0.05,0.1,"(CTICK-START_TICK<=1)19.7510721773025"
+"Cereal",0,0,0,0,0,0,"(CTICK-START_TICK<=1)0"
+"Recreation",0.1,0.1,0,0.1,0.1,0,"0.000660666877956513"
+"Timber",0,0,0,0,0,0,"0"
+"OF_Meat",0.3,0.1,0.3,0.4,0.05,0.1,"(CTICK-START_TICK>1)19.7510721773025"
+"OF_Cereal",0,0,0,0,0,0,"(CTICK-START_TICK>1)0"

@@ -5,6 +5,7 @@
 # Last update: 	11/11/2016
 # Author: 		Sascha Holzhauer
 # Instructions:	Just run entire script
+# Consider R package eurostat next time.. (https://cran.r-project.org/web/packages/eurostat/)
 ##########################################################################################
 
 ## import configuration

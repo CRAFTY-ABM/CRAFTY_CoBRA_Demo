@@ -28,6 +28,9 @@ simp$sim$filepartorder_demands <- c("scenario", "U", "datatype", "U", "regions")
 simp$sim$hasregiondir		<- TRUE
 simp$csv$tickinterval_cell	<- 4
 
+simp$sim$starttick			<- 2000
+simp$sim$endtick			<- 2013
+
 ### Directories ################################################################
 simp$dirs$output$data		<- paste(simp$dirs$outputdir, "Data/", sep="")
 simp$dirs$output$rdata		<- paste(simp$dirs$outputdir, "RData/", sep="") 

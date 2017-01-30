@@ -1,0 +1,30 @@
+<scenario startTick="2000" endTick="2013" world="NEEU"
+		basedirAdaptation="/../"
+		csvParamBasedirCorrection="setC/"
+		version="${@(Runs.csv, Version)}"
+		regionalisation = "${@(Runs.csv, Regionalisation)}"
+		scenario="${@(Runs.csv, Scenario)}"
+		>
+	<capitals class="org.volante.abm.serialization.CSVCapitalLoader" file="../csv/Capitals.csv" indexed="true"/>
+	<services class="org.volante.abm.serialization.CSVServiceLoader" file="../csv/Services.csv" indexed="true"/>
+	<outputs outputDirectory="output/%v/%w/%k/%s/%i/%r" filePattern="%s-%i-%r-%o" tickPattern="%s-%i-%r-%o-%y" >
+		<output class="org.volante.abm.output.CellTable" perRegion="true" addRegion="false" addCellRegion="false"
+        	addServices="true" addCapitals="false" addCompetitiveness="true" addLandUseIndex="true" addLandUse="false" addAgent="true" 
+        	doubleFormat="0.000" startYear="2000" everyNYears="4"/> 
+    	<output class="org.volante.abm.output.AggregateAFTCompositionCSVOutputter" outputSums="true" perRegion="true" startYear="2000" everyNYears="1"/>
+		<output class="org.volante.abm.output.AggregateAFTCompetitivenessCSVOutputter" perRegion="true" startYear="2000" everyNYears="1"/>
+		<output class="org.volante.abm.output.AggregateDemandSupplyCSVOutputter" perRegion="true" startYear="2000" everyNYears="1"/>
+				<output class="org.volante.abm.output.TakeoverCellOutputter" perRegion="true" everyNYears="1" filePerTick="false" addRegion="false"/>
+		<output class="org.volante.abm.output.GivingInStatisticsOutputter" startYear="2001" perRegion="true" everyNYears="1" filePerTick="false" addRegion="false"/>
+		<output class="org.volante.abm.output.ActionCSVOutputter" filePerTick="false" perRegion="true" startYear="2000" everyNYears="1">
+			<column class="org.volante.abm.comi.output.PreferenceEffectivenessTableEntry" preference="WSubjectiveNorm"></column>
+			<column class="org.volante.abm.comi.output.PreferenceEffectivenessTableEntry" preference="WPBC"></column>
+		</output>
+	</outputs>
+
+	<displays class="org.volante.abm.visualisation.NoModelDisplays"/>
+			
+	<globalBtReposFile>./institutions/global/GlobalInstitutionsBtRepos.xml</globalBtReposFile>
+	<globalInstitutionFile>${@(Runs.csv, GlobalInstitutions_xml)}</globalInstitutionFile>
+	<worldLoaderFile>./xml/World_CSV.xml</worldLoaderFile>
+</scenario>
