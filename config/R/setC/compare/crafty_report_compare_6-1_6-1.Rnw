@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+
+<<configdef, echo=FALSE, results='hide', warning=FALSE>>=
+source(simp$simpDefinition)
+
+# ADAPT:
+simp$sim$folder 	<- "setC"
+
+setwd(paste(simp$dirs$simp, sep="/"))
+source(paste(simp$dirs$simp, simp$sim$folder, "simp.R", sep="/"))
+
+
+runids <- c("5-1", "6-1")
+
+simps <- list()
+for(runid in runids) {
+	s <- simp
+	s$sim$id					<- runid
+	s$sim$shortid				<- runid
+	simps <- append(simps, list(s))
+}
+
+simp$sim$runids 	<- runids[2]
+simp$sim$id			<- runids[2]
+
+simp$fig$init <- function(simp, outdir, filename) {}
+simp$fig$close<- function() {}
+
+# adjust figure settings:
+library(ggplot2)
+library(kfigr)
+#ggplot2::theme_set(visualisation_raster_legendonlytheme(base_size = 10))
+simp$fig$facetlabelsize	<- 11
+
+
+opts_chunk$set(comment=NA, echo=FALSE, results='hide', fig.pos='h!', fig.align='center',
+		out.width='\\textwidth', warning=FALSE, message=FALSE,
+		kfigr.prefix = TRUE)
+@
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{varioref}
+\usepackage[pdftex]{hyperref}
+\usepackage{float}
+\usepackage{cprotect}
+
+\cprotect\title{CoBRA\_Demo \\ \verb|\Sexpr{simp$sim$version}|}
+\author{Sascha Holzhauer}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Configuration}
+\begin{itemize}
+\item No configuration annotations.
+\end{itemize}
+
+\subsection{Run Information}
+\label{runinfo}
+<<runinfo, results='asis'>>=
+hl_compileruninfos(simp)
+@
+
+
+\newpage
+\section{Results}
+\subsection{AFT Composition}
+<<aftcomposition>>=
+hl_comp_aggregate_aftcompositions(simp, simps, dataname="dataAggregateAFTComposition")
+hl_comp_aggregate_aftcompositions(simp, simps, dataname = "dataAggregateAFTComposition",
+		afts = c("COF_Cereal", "COF_Livestock", "NCOF_Cereal", "NCOF_Livestock"))
+@
+
+\subsection{Demand and Supply}
+<<demandsupply>>=
+hl_comp_demandsupply(simp, simps, dataname="dataAggregateSupplyDemand")
+hl_comp_demandsupply(simp, simps, dataname="dataAggregateSupplyDemand", services = c( "OF_Meat", "OF_Cereal"))
+@
+
+\subsection{Single Demand and Supply}
+<<singledemandsupply>>=
+for(runid in runids) {
+	simp$sim$id			<- runid
+	hl_aggregate_demandsupply(simp, dataname="dataAggregateSupplyDemand")
+}
+@
+
+\section{Observations}
+\begin{itemize}
+  \item No observations yet.
+\end{itemize}  
+
+
+% This line must not be copied or deleted!
+\end{document}

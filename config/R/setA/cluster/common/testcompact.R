@@ -8,7 +8,7 @@ require(methods)
 preserve <- list()
 
 
-run = 1; rseed = 1
+run = 3; rseed = 1
 preserve$run = run
 preserve$seed = rseed
 preserve$task = paste(preserve$run, preserve$seed, sep="-") 

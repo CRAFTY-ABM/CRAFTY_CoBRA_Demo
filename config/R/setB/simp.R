@@ -52,6 +52,7 @@ simp$batchcreation$agentparam_tmpldir		<- paste(simp$batchcreation$inputdatadir,
 simp$batchcreation$gu_stages				<- c("medium")
 simp$batchcreation$gi_stages				<- c("medium")
 simp$batchcreation$placeholders				<- c(0)
+simp$batchcreation$allocationProbabilities	<- c(1.0, 0.3, 0.1)
 
 simp$batchcreation$inputdatadirs$aftparams	<- paste(simp$batchcreation$inputdatadir, "/setB/agents", sep="")
 simp$batchcreation$inputdatadirs$production	<- paste("setB/production/", sep="")

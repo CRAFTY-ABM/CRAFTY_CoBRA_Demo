@@ -1,0 +1,3 @@
+"aftParamId","givingInDistributionMean","givingInDistributionSD","givingUpDistributionMean","givingUpDistributionSD","serviceLevelNoiseMin","serviceLevelNoiseMax","givingUpProb","allocationProbability","productionCsvFile"
+0,0.1,0.03,0,0.03,0,0.1,0.2,1,"setC/production/COF_Livestock.csv"
+1,0.1,0.03,0,0.03,0,0.1,0.2,0.3,"setC/production/COF_Livestock.csv"
