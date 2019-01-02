@@ -13,7 +13,7 @@
 rm(list=ls(name=globalenv(), pattern="[^{preserve}]"), envir=globalenv())
 
 ### Project Root ###############################################################
-project			<- "/exports/csce/eddie/geos/groups/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/"
+project			<- "/home/users/0033/uk052959/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/"
 
 if (!exists("preserve")) {
 	preserve <- list()
@@ -31,7 +31,7 @@ simp$simpDefinition <- paste(simp$dirs$project, "config/R/simp-machine_cluster.R
 simp$dirs$data 				<- paste(simp$dirs$project, "data/", sep="")
 simp$dirs$simp				<- paste(simp$dirs$project, "./config/R/", sep="")
 
-simp$dirs$outputdir			<- paste("/exports/csce/datastore/geos/groups/LURG/Projects/Impressions/Modelling/CRAFTY_CoBRA_Demo/Output/%VFOLDER%/", sep="/")
+simp$dirs$outputdir			<- paste("/home/users/0033/uk052959/LURG/models/CRAFTY_CoBRA_Demo/Output/%VFOLDER%/", sep="/")
 
 simp$dirs$output$simulation	<- paste(simp$dirs$project, "/output/%VFOLDER%/", sep="")
 simp$dirs$output$data		<- paste(simp$dirs$project, "data/", sep="")

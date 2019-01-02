@@ -10,7 +10,8 @@
 # Only contained when the particular script is only executed on a specific maschine!
 # Otherwise. the maschine=specific file needs to be executed before.
 
-source("/exports/csce/eddie/geos/groups/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/config/R/simp-machine_cluster.R")
+#source("/exports/csce/eddie/geos/groups/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/config/R/simp-machine_cluster.R")
+source("/home/users/0033/uk052959/LURG/models/CRAFTY_CoBRA_Demo/0.1_2016-10-24_22-18/config/R/simp-machine_cluster.R")	
 require(methods)
 
 option_list <- list(
