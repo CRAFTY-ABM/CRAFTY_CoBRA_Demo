@@ -94,7 +94,7 @@ scenario        = options.scenarioName
 clusterMode     = options.clusterMode
 
 # specify target file (without file ending
-torqueScriptTemplate =  "Eddie_Crafty_" + clusterMode
+torqueScriptTemplate =  "UniK_Crafty_" + clusterMode
 
 SinglesTargetDir = "./" + scenario + "/"
 
@@ -126,7 +126,7 @@ if not options.integrateResultsFolder:
     os.makedirs("../" + outputDataFolder + "/" + scenario)
 
 
-qsubFilename = targetDir + "qsubScript_" + scenario.replace("/", "-") + "_" + str(startTick) +"-" + str(endTick) + "_" + str(runStart) + "_" + str(randomSeedStart)+ ".sh"
+qsubFilename = targetDir + "sbatchScript_" + scenario.replace("/", "-") + "_" + str(startTick) +"-" + str(endTick) + "_" + str(runStart) + "_" + str(randomSeedStart)+ ".sh"
 qsubScript = open(qsubFilename, "w")
 
 qsubScript.write("#!/bin/bash\n")
@@ -161,7 +161,7 @@ for k in range(0, numRuns * numRandomSeeds, numRunsPerBatch):
     infile.close()
     outFile.close()
     qsubScript.write("mkdir -p ./output/" + scenario + "/" + str(runs[k]) + "-" + str(randomSeeds[k]) + "\n")
-    qsubScript.write("qsub " + SinglesTargetDir  + torqueScriptTemplate +  "_" + str(runs[k]) + "-" + str(randomSeeds[k]) + ".sh\n")
+    qsubScript.write("sbatch " + SinglesTargetDir  + torqueScriptTemplate +  "_" + str(runs[k]) + "-" + str(randomSeeds[k]) + ".sh\n")
 
 qsubScript.close()
 
